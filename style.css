@@ -4,21 +4,50 @@ body {
     text-align: center;
     color: #ff69b4;
     margin: 0;
-    padding: 20px; /* Add padding to prevent edge cut-off */
+    padding: 50px 20px; /* Add space around */
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Center the image */
+.hello-kitty {
+    background-image: url('hello_kitty.png'); /* Make sure the image is in the same folder */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+/* Title Styling */
 h1 {
     font-size: 3.5rem;
     color: #ff1493;
     text-shadow: 3px 3px 10px rgba(255, 20, 147, 0.5);
     font-family: 'Comic Sans MS', cursive;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
+/* Paragraph Styling */
 p {
     font-size: 1.3rem;
     color: #ff85a2;
     margin-bottom: 15px;
+}
+
+/* Buttons are now SIDE BY SIDE */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
 }
 
 button {
@@ -26,14 +55,12 @@ button {
     color: white;
     border: none;
     padding: 15px 30px;
-    margin: 10px;
     font-size: 1.5rem;
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0px 6px 12px rgba(255, 105, 180, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-family: 'Comic Sans MS', cursive;
-    display: inline-block; /* Ensure buttons are not full width */
 }
 
 button:hover {
@@ -41,6 +68,7 @@ button:hover {
     box-shadow: 0px 8px 20px rgba(255, 105, 180, 0.7);
 }
 
+/* Message Styling */
 #message {
     margin-top: 20px;
     font-size: 1.8rem;
@@ -48,38 +76,30 @@ button:hover {
     text-shadow: 1px 1px 5px rgba(255, 20, 147, 0.3);
 }
 
-footer {
-    margin-top: 50px;
-    font-size: 1rem;
-    color: #ff69b4;
-}
-
-.hello-kitty {
-    background-image: url('hello_kitty.png'); /* Make sure the image is in the same folder */
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    width: 120px;
-    height: 120px;
-    display: block;
-    margin: 20px auto;
-}
-
-.hidden {
-    display: none;
-}
-
+/* Love Letter Box */
 #loveLetter {
     background: white;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
     text-align: center;
-    width: 500px; /* Set fixed width for PC */
-    margin: 20px auto; /* Center it */
+    width: 500px; /* Set width for PC */
+    margin: 20px auto;
     animation: fadeIn 1s ease-in-out;
 }
 
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    font-size: 1rem;
+    color: #ff69b4;
+}
+
+/* Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
