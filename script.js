@@ -23,12 +23,13 @@ noButton.addEventListener("click", function() {
     let yesRect = yesButton.getBoundingClientRect();
     let buttonWidth = noButton.offsetWidth;
     let buttonHeight = noButton.offsetHeight;
+    let viewportWidth = window.innerWidth;
+    let viewportHeight = window.innerHeight;
 
-    // Define a safe zone below the question but avoiding the Yes button
-    let minX = questionRect.left - 100; // A little left of the question
-    let maxX = questionRect.right + 50 - buttonWidth; // A little right of the question
-    let minY = questionRect.bottom + 20; // Below the question
-    let maxY = minY + 150; // Limit how far it can go down
+    let minX = Math.max(10, questionRect.left - 100);
+    let maxX = Math.min(viewportWidth - buttonWidth - 10, questionRect.right + 150);
+    let minY = Math.max(10, questionRect.bottom + 20);
+    let maxY = Math.min(viewportHeight - buttonHeight - 10, minY + 150);
 
     let randomX, randomY;
     let isOverlapping;
@@ -51,21 +52,21 @@ noButton.addEventListener("click", function() {
     noButton.style.left = randomX + "px";
     noButton.style.top = randomY + "px";
 
-    // Make the message follow the No button
+    // Update the message position slightly above the No button
     message.style.position = "absolute";
     message.style.left = (randomX + 20) + "px";
-    message.style.top = (randomY + 50) + "px";
+    message.style.top = (randomY - 40) + "px";
 
-    // Change message text
+    // Change message text dynamically
     let messages = [
         "pls pls pls",
         "Wait, hold on a second...",
         "HELP! The button is running away!",
-        "Just say yes already hator!*mad jay sounds 😡*",
+        "Just say yes already hator! *mad jay sounds 😡*",
         "aight bru 😔"
     ];
-    
-    message.textContent = messages[noClickCount];
+
+    message.textContent = messages[noClickCount] || "🥺";
 
     noClickCount++;
 });
