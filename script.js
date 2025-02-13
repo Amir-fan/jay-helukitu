@@ -1,52 +1,71 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const yesButton = document.getElementById("yesButton");
-    const noButton = document.getElementById("noButton");
+document.getElementById("yesButton").addEventListener("click", function() {
     const message = document.getElementById("message");
-    const loveLetter = document.getElementById("loveLetter");
-    let noClickCount = 0;
+    message.textContent = "MEMEME, glad you accepted princess! 💖";
 
-    // Yes Button Click
-    yesButton.addEventListener("click", function () {
-        message.textContent = "MEMEME, glad you accepted princess! 💖";
-        
-        // Hide "No" button & Message
-        noButton.style.display = "none";
-        message.style.display = "none";
+    // Show the love letter
+    document.getElementById("loveLetter").style.display = "block";
+});
 
-        // Show the love letter with animation
-        loveLetter.classList.add("show");
-    });
+let noClickCount = 0;
+const noButton = document.getElementById("noButton");
+const yesButton = document.getElementById("yesButton");
+const message = document.getElementById("message");
+const question = document.querySelector("h1");
 
-    // No Button Click (moves randomly)
-    noButton.addEventListener("click", function () {
-        if (noClickCount >= 5) {
-            noButton.textContent = "STOP FINGORING ME";
-            noButton.disabled = true;
-            return;
-        }
-
-        moveNoButton(); // Move "No" button
-        const messages = [
-            "pls pls pls",
-            "Wait, hold on a second...",
-            "HELP! The button is running away!",
-            "Just say yes already hator! *mad jay sounds 😡*",
-            "aight bru 😔"
-        ];
-        message.textContent = messages[noClickCount] || "🥺";
-        noClickCount++;
-    });
-
-    // Function to move "No" button randomly
-    function moveNoButton() {
-        let viewportWidth = window.innerWidth - 100; // Prevents overflow
-        let viewportHeight = window.innerHeight - 50;
-
-        let randomX = Math.floor(Math.random() * viewportWidth);
-        let randomY = Math.floor(Math.random() * viewportHeight);
-
-        noButton.style.position = "absolute";
-        noButton.style.left = `${randomX}px`;
-        noButton.style.top = `${randomY}px`;
+noButton.addEventListener("click", function() {
+    if (noClickCount >= 5) {
+        noButton.textContent = "STOP FINGORING ME";
+        noButton.disabled = true;
+        return;
     }
+
+    let questionRect = question.getBoundingClientRect();
+    let yesRect = yesButton.getBoundingClientRect();
+    let buttonWidth = noButton.offsetWidth;
+    let buttonHeight = noButton.offsetHeight;
+
+    // Define a safe zone below the question but avoiding the Yes button
+    let minX = questionRect.left - 100; // A little left of the question
+    let maxX = questionRect.right + 50 - buttonWidth; // A little right of the question
+    let minY = questionRect.bottom + 20; // Below the question
+    let maxY = minY + 150; // Limit how far it can go down
+
+    let randomX, randomY;
+    let isOverlapping;
+
+    do {
+        randomX = Math.floor(Math.random() * (maxX - minX)) + minX;
+        randomY = Math.floor(Math.random() * (maxY - minY)) + minY;
+
+        // Check if it overlaps with the Yes button
+        isOverlapping = (
+            randomX < yesRect.right &&
+            randomX + buttonWidth > yesRect.left &&
+            randomY < yesRect.bottom &&
+            randomY + buttonHeight > yesRect.top
+        );
+
+    } while (isOverlapping); // Keep generating new positions until it's safe
+
+    noButton.style.position = "absolute";
+    noButton.style.left = randomX + "px";
+    noButton.style.top = randomY + "px";
+
+    // Make the message follow the No button
+    message.style.position = "absolute";
+    message.style.left = (randomX + 20) + "px";
+    message.style.top = (randomY + 50) + "px";
+
+    // Change message text
+    let messages = [
+        "pls pls pls",
+        "Wait, hold on a second...",
+        "HELP! The button is running away!",
+        "Just say yes already hator!*mad jay sounds 😡*",
+        "aight bru 😔"
+    ];
+    
+    message.textContent = messages[noClickCount];
+
+    noClickCount++;
 });
