@@ -12,12 +12,12 @@ body {
     height: 100vh;
 }
 
-/* Hello Kitty Image (Fixed Path & Positioned Above Text) */
+/* Hello Kitty Image (Positioned Correctly) */
 .hello-kitty {
-    width: 150px; /* Adjust size if needed */
+    width: 150px;
     height: auto;
     display: block;
-    margin: 0 auto 20px; /* Centered & space below */
+    margin: 0 auto 20px;
 }
 
 h1 {
@@ -56,12 +56,12 @@ button:hover {
     color: #ff1493;
 }
 
-/* Hide No Button & Message on Yes Click */
+/* Hide Elements Initially */
 .hidden {
     display: none;
 }
 
-/* Love Letter (Hidden Until Clicked) */
+/* Love Letter Styling */
 #loveLetter {
     background: white;
     padding: 20px;
