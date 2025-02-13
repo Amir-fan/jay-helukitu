@@ -5,16 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const loveLetter = document.getElementById("loveLetter");
     let noClickCount = 0;
 
+    // Initially hide love letter
+    loveLetter.style.display = "none";
+
     // Yes Button Click
     yesButton.addEventListener("click", function () {
         message.textContent = "MEMEME, glad you accepted princess! 💖";
-
+        
         // Hide No Button & Message
         noButton.style.display = "none";
         message.style.display = "none";
 
         // Show the love letter with fade-in effect
-        loveLetter.classList.remove("hidden");
         loveLetter.style.display = "block";
     });
 
@@ -43,13 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to move the "No" button randomly
     function moveNoButton() {
-        let viewportWidth = window.innerWidth;
-        let viewportHeight = window.innerHeight;
-        let buttonWidth = noButton.offsetWidth;
-        let buttonHeight = noButton.offsetHeight;
+        let viewportWidth = window.innerWidth - 100; // Prevents overflow
+        let viewportHeight = window.innerHeight - 50;
 
-        let randomX = Math.floor(Math.random() * (viewportWidth - buttonWidth));
-        let randomY = Math.floor(Math.random() * (viewportHeight - buttonHeight));
+        let randomX = Math.floor(Math.random() * viewportWidth);
+        let randomY = Math.floor(Math.random() * viewportHeight);
 
         noButton.style.position = "absolute";
         noButton.style.left = `${randomX}px`;
