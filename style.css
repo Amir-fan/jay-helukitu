@@ -12,11 +12,18 @@ body {
     height: 100vh;
 }
 
+/* Hello Kitty Image Fix */
+.hello-kitty {
+    width: 120px; /* Adjust size if needed */
+    height: auto;
+    display: block;
+    margin-bottom: 10px; /* Spacing between image and text */
+}
+
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #ff1493;
     text-shadow: 3px 3px 10px rgba(255, 20, 147, 0.5);
-    font-family: Arial, sans-serif;
 }
 
 p {
@@ -36,7 +43,6 @@ button {
     box-shadow: 0px 6px 12px rgba(255, 105, 180, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-family: Arial, sans-serif;
-    position: relative;
 }
 
 button:hover {
@@ -46,9 +52,8 @@ button:hover {
 
 #message {
     margin-top: 20px;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #ff1493;
-    text-shadow: 1px 1px 5px rgba(255, 20, 147, 0.3);
 }
 
 footer {
@@ -57,17 +62,7 @@ footer {
     color: #ff69b4;
 }
 
-.hello-kitty {
-    background-image: url('images/hello_kitty.png'); /* Corrected path */
-    background-repeat: no-repeat;
-    background-size: 120px 120px; /* Adjust size if needed */
-    background-position: center;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 10px auto; /* Ensures it's above the text */
-    display: block;
-}
-
+/* Love Letter (Hidden Until Clicked) */
 .hidden {
     display: none;
 }
@@ -81,6 +76,7 @@ footer {
     max-width: 400px;
     margin-top: 20px;
     animation: fadeIn 1s ease-in-out;
+    display: none; /* Ensures it's hidden at start */
 }
 
 @keyframes fadeIn {
