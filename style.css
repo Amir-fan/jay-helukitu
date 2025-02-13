@@ -86,3 +86,58 @@ footer {
     from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
 }
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 768px) {
+    body {
+        height: auto; /* Allow content to be scrollable on smaller screens */
+        padding: 20px; /* Add some padding for better spacing on mobile */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Make the heading smaller for mobile */
+    }
+
+    p {
+        font-size: 1.1rem; /* Smaller paragraph text for mobile */
+    }
+
+    button {
+        font-size: 1.2rem; /* Smaller buttons for mobile */
+        padding: 12px 25px; /* Adjust padding for smaller screens */
+    }
+
+    .hello-kitty {
+        width: 80px; /* Resize the image for mobile */
+        height: 80px;
+    }
+
+    #loveLetter {
+        max-width: 90%; /* Make the love letter more responsive */
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2rem; /* Even smaller heading on very small screens */
+    }
+
+    p {
+        font-size: 1rem; /* Even smaller text for very small screens */
+    }
+
+    button {
+        font-size: 1rem; /* Make buttons smaller for small screens */
+        padding: 10px 20px; /* Adjust button padding for smaller screens */
+    }
+
+    .hello-kitty {
+        width: 70px; /* Further reduce the size of the image for very small screens */
+        height: 70px;
+    }
+
+    footer {
+        font-size: 0.8rem; /* Make footer text smaller */
+    }
+}
