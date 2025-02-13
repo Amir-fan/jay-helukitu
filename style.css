@@ -1,6 +1,6 @@
 body {
     background: linear-gradient(to bottom right, #ffd1e3, #fff0f6);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
     color: #ff69b4;
     margin: 0;
@@ -16,7 +16,6 @@ h1 {
     font-size: 3.5rem;
     color: #ff1493;
     text-shadow: 3px 3px 10px rgba(255, 20, 147, 0.5);
-    font-family: 'Comic Sans MS', cursive;
 }
 
 p {
@@ -35,8 +34,6 @@ button {
     cursor: pointer;
     box-shadow: 0px 6px 12px rgba(255, 105, 180, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: 'Comic Sans MS', cursive;
-    position: relative;
 }
 
 button:hover {
@@ -58,10 +55,9 @@ footer {
 }
 
 .hello-kitty {
-    background-image: url('hello_kitty.png'); /* Make sure the image is in the same folder */
+    background-image: url('images/hello-kitty.png');
     background-repeat: no-repeat;
     background-size: 100px 100px;
-    background-position: center;
     width: 100px;
     height: 100px;
     margin: 20px auto;
