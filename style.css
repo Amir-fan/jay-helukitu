@@ -12,12 +12,12 @@ body {
     height: 100vh;
 }
 
-/* Hello Kitty Image Fix */
+/* Hello Kitty Image (Fixed Path & Positioned Above Text) */
 .hello-kitty {
-    width: 120px; /* Adjust size if needed */
+    width: 150px; /* Adjust size if needed */
     height: auto;
     display: block;
-    margin-bottom: 10px; /* Spacing between image and text */
+    margin: 0 auto 20px; /* Centered & space below */
 }
 
 h1 {
@@ -56,17 +56,12 @@ button:hover {
     color: #ff1493;
 }
 
-footer {
-    margin-top: 50px;
-    font-size: 1rem;
-    color: #ff69b4;
-}
-
-/* Love Letter (Hidden Until Clicked) */
+/* Hide No Button & Message on Yes Click */
 .hidden {
     display: none;
 }
 
+/* Love Letter (Hidden Until Clicked) */
 #loveLetter {
     background: white;
     padding: 20px;
@@ -76,10 +71,16 @@ footer {
     max-width: 400px;
     margin-top: 20px;
     animation: fadeIn 1s ease-in-out;
-    display: none; /* Ensures it's hidden at start */
+    display: none;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 1rem;
+    color: #ff69b4;
 }
