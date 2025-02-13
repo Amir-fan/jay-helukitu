@@ -5,10 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will You Be My Valentine?</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .hello-kitty {
+            margin-bottom: 20px;
+        }
+        .hello-kitty img {
+            max-width: 150px; /* Adjust size as needed */
+        }
+        h1 {
+            color: #e91e63; /* Sweet pink color */
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1rem;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e91e63;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #e91e63;
+        }
+        #loveLetter {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+            background-color: #fce4ec;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #888;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="hello-kitty"></div>
-    <h1 id="question">Will you be my Valentine, Jay? ❤️</h1>
+    <div class="hello-kitty">
+        <img src="images/hello-kitty.png" alt="Hello Kitty" />
+    </div>
+    <h1>Will you be my Valentine, Jay? ❤️</h1>
     <p>Make my day special (you make my life special)</p>
     <div class="button-container">
         <button id="yesButton">Yes</button>
@@ -18,12 +81,13 @@
 
     <!-- Hidden Love Letter -->
     <div id="loveLetter" class="hidden">
-        <h2>Here’s my love</h2>
-        <p>
-           I’m so lucky to have you, my love. You're the best thing that has ever happened to me. You're my happiness, my best friend, and my forever Valentine. You're the prettiest girl ever, cutest, most caring. I love you more than anything ever.  
-            <br><br>
-            Will you always be my Valentine? 💖
-        </p>
+        <h2>💌 for you my world 💖</h2>
+        <p>Jay,</p>
+        <p>I'm so lucky to have you, my love. You're the best thing that has ever happened to me.  
+        You're my happiness, my best friend, and my forever Valentine. You're the prettiest girl ever, cutest, and most caring.  
+        I love you more than anything ever.</p>
+        <p>Forever yours,</p>
+        <p>Amir ❤️</p>
     </div>
 
     <footer>Designed with ❤️ by Amir</footer>
