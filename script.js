@@ -1,6 +1,12 @@
 document.getElementById("yesButton").addEventListener("click", function() {
     const message = document.getElementById("message");
+    const noButton = document.getElementById("noButton");
+
     message.textContent = "MEMEME, glad you accepted princess! 💖";
+
+    // Hide No Button & Message
+    noButton.style.display = "none";
+    message.style.display = "none";
 
     // Show the love letter
     document.getElementById("loveLetter").style.display = "block";
@@ -35,34 +41,4 @@ noButton.addEventListener("click", function() {
     let isOverlapping;
 
     do {
-        randomX = Math.floor(Math.random() * (maxX - minX)) + minX;
-        randomY = Math.floor(Math.random() * (maxY - minY)) + minY;
-
-        isOverlapping = (
-            randomX < yesRect.right &&
-            randomX + buttonWidth > yesRect.left &&
-            randomY < yesRect.bottom &&
-            randomY + buttonHeight > yesRect.top
-        );
-
-    } while (isOverlapping);
-
-    noButton.style.position = "absolute";
-    noButton.style.left = randomX + "px";
-    noButton.style.top = randomY + "px";
-
-    message.style.position = "absolute";
-    message.style.left = (randomX + 20) + "px";
-    message.style.top = (randomY - 40) + "px";
-
-    let messages = [
-        "pls pls pls",
-        "Wait, hold on a second...",
-        "HELP! The button is running away!",
-        "Just say yes already hator! *mad jay sounds 😡*",
-        "aight bru 😔"
-    ];
-
-    message.textContent = messages[noClickCount] || "🥺";
-    noClickCount++;
-});
+        randomX = Math.fl
