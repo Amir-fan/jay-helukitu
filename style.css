@@ -58,13 +58,14 @@ footer {
 }
 
 .hello-kitty {
-    background-image: url('hello_kitty.png'); /* Make sure the image is in the same folder */
+    background-image: url('images/hello_kitty.png'); /* Corrected path */
     background-repeat: no-repeat;
-    background-size: 100px 100px;
+    background-size: 120px 120px; /* Adjust size if needed */
     background-position: center;
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 10px auto; /* Ensures it's above the text */
+    display: block;
 }
 
 .hidden {
